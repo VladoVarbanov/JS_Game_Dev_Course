@@ -34,7 +34,7 @@ export class Raven {
       ")";
   }
   /** Methods */
-  update(deltaTime) {
+  update(deltaTime, gameOver) {
     if (this.y < 0 || this.y > this.canvas.height - this.height) {
       this.directionY = this.directionY * -1;
     }
@@ -47,6 +47,7 @@ export class Raven {
       else this.frame++;
       this.timeSinceFlap = 0;
     }
+    if (this.x < 0 - this.width) gameOver.state = true;
   }
   draw() {
     this.collisionCtx.fillStyle = this.color;

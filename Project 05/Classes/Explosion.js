@@ -16,7 +16,7 @@ export class Explosion {
     this.markedForDeletion = false;
   }
   /** Methods */
-  update(deltaTime) {
+  update(deltaTime, gameOver) {
     if (this.frame === 0) this.sound.play();
     this.timeSinceLastFrame += deltaTime;
     if (this.timeSinceLastFrame > this.frameInterval) {
